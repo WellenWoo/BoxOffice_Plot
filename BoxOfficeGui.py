@@ -7,6 +7,7 @@ from plot_figure import plt_fig,plt_fig_month
 from utility_template import layout_template
 
 __author__ = 'WellenWoo'
+__mail__ = 'wellenwoo@163.com'
 
 """
 本程序可获取国内当天票房和近期历史电影票房数据，
@@ -93,9 +94,6 @@ class MainWindow(wx.Frame):
         
         self.CreateStatusBar()
         self.Show(True)
-
-    def test(self,evt):
-        print 'OK'
     
     def day_boxoffice(self,evt):
         self.fig.day_boxoffice(title = u'本日票房',ylabel = u'票房\万元')
@@ -122,7 +120,7 @@ class MainWindow(wx.Frame):
     def get_month(self):
         dlg = wx.TextEntryDialog(
                 self, u'please input the month输入月份',
-                'month_boxoffice', 'xxxx-xx')
+                'month_boxoffice', 'oooo-oo')
         dlg.SetValue("xxxx-xx")
         if dlg.ShowModal() == wx.ID_OK:
             month = dlg.GetValue()
@@ -135,7 +133,8 @@ class MainWindow(wx.Frame):
 
     def OnAbout(self, evt):
         info = self.lt.About_info(self.name,self.version,self.copyright,
-                                  self.des,self.git_website,__author__,wx.ClientDC(self))    
+                                  self.des,self.git_website,
+                                  __author__+'\n'+__mail__,wx.ClientDC(self))    
         wx.AboutBox(info)
 
     def Onhelpdoc(self, evt):
