@@ -1,6 +1,7 @@
 #-*- coding: utf-8 -*-
 
 import wx
+import  wx.lib.dialogs
 from collections import namedtuple
 
 from plot_figure import plt_fig,plt_fig_month
