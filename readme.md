@@ -17,5 +17,8 @@ wx,tushare,matplotlib,pandas,numpy。
 ## Feedback:
 有任何疑问或建议欢迎[反馈](https://github.com/WellenWoo/BoxOffice_Plot.git)。
 
+## Todo:
+1. 增加北美地区票房数据的可视化功能.
+
 
 
