@@ -1,9 +1,5 @@
 #-*- coding: utf-8 -*-
 
-import sys   
-reload(sys) 
-sys.setdefaultencoding('utf8')
-
 import wx
 from wx.lib.wordwrap import wordwrap
 
