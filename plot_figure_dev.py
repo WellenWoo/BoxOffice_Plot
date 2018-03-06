@@ -6,7 +6,9 @@ import numpy as np
 import tushare as ts
 import time
 import os
+import seaborn as sns
 
+sns.set(style="white", context="talk")
 plt.rcParams['font.family'] = 'SimHei'
 __author__ = 'WellenWoo'
 
@@ -58,14 +60,17 @@ class plt_fig():
         fig,(ax0,ax1) = plt.subplots(nrows=2, figsize=(6, 8))
         bar_width = 0.65
 
-        ax0.bar(xdata,y1,bar_width,color = 'r')
+##        ax0.bar(xdata,y1,bar_width,color = 'r')
+        sns.barplot(xdata,y1,palette = "Set1",ax = ax0)
         ax0.set_title(title1)
         ax0.set_ylabel(ylabel)
         ax0.grid()
 
-        ax1.bar(xdata,y2,bar_width,color = 'b')
-        plt.xticks(xdata+bar_width/2,xticks)
+##        ax1.bar(xdata,y2,bar_width,color = 'b')
+        sns.barplot(xdata,y2,palette = "Set2",ax = ax1)
+        plt.xticks(xdata-bar_width,xticks)
         ax1.set_title(title2)
+        ax1.set_xlabel("MovieName")
         ax1.set_ylabel(ylabel)
         ax1.grid()
         
@@ -121,8 +126,10 @@ class plt_fig_month(plt_fig):
         ax = fig.add_subplot(111)
         bar_width = 0.65
 
-        ax.bar(xdata,ydata,bar_width,color = 'r')
-        plt.xticks(xdata+bar_width/2,xticks)
+##        ax.bar(xdata,ydata,bar_width,color = 'r')
+        sns.barplot(xdata,ydata,palette = "Set3",ax = ax)
+        plt.xticks(xdata-bar_width,xticks)
+        ax.set_xlabel("MovieName")
         ax.set_title(title)
         ax.set_ylabel(ylabel)
         plt.grid()
