@@ -67,15 +67,24 @@ class plt_fig():
         ax = fig.add_subplot(111)
         bar_width = 0.65
 
-        ax.bar(xdata,ydata,bar_width,color = 'r')
+        rect = ax.bar(xdata,ydata,bar_width,color = 'r')
         plt.xticks(xdata+bar_width/2,xticks)
         ax.set_title(title)
         ax.set_ylabel(ylabel)
+        
         plt.grid()
         fig.autofmt_xdate()
+        self.autolabel(ax,rect)
         plt.tight_layout()
         plt.show()
 
+    def autolabel(self,ax,rects):
+        for rect in rects:
+            height = rect.get_height()
+            ax.text(rect.get_x() + rect.get_width()/2., 1.05*height,
+                '%d' % int(height),
+                ha='center', va='bottom')
+        
     def plt_pie(self,xdata,ydata,title):
         fig = plt.figure()
         ax = fig.add_subplot(111)
