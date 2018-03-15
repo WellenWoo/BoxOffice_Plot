@@ -7,6 +7,9 @@ from collections import namedtuple
 from plot_figure import plt_fig,plt_fig_month
 from utility_template import layout_template
 
+from tw_boxoffice import tw_fig
+from us_boxoffice import us_fig
+
 __author__ = 'WellenWoo'
 __mail__ = 'wellenwoo@163.com'
 
@@ -28,20 +31,26 @@ class MainWindow(wx.Frame):
         """预定义参数"""
         self.fig = plt_fig()
         self.fig_month = plt_fig_month()
+        
+        self.tw_fig = tw_fig()
+        self.us_fig = us_fig()
+        
         self.lt = layout_template()
         self.name = 'BoxOffice_plot'
-        self.version = '1.0'
+        self.version = '1.1'
         self.des = '''BoxOffice data visualization.\n'''
         self.git_website = "https://github.com/WellenWoo/BoxOfficePlot"
         self.copyright = "(C) 2017 All Right Reserved"
         
         b_labels = [
-                    'day_boxoffice',
-                    'day_boxoffice_pre',
-                    'sum_boxoffice',
-                    'sum_boxoffice_pre',
-                    'month_boxoffice',
-                    'month_boxoffice_pre'
+                    u'今日票房榜',
+                      u'今日票房占比',
+                      u'总票房榜',
+                      u'总票房占比',
+                      u'月票房榜',
+                      u'月票房占比',
+                    u'台北周末票房',
+                    u'美国周末票房'
                         ]
 
         TipString = [ u'今日票房榜',
@@ -50,10 +59,13 @@ class MainWindow(wx.Frame):
                       u'总票房占比',
                       u'月票房榜',
                       u'月票房占比',
+                      u'台北周末票房',
+                      u'美国周末票房'
             ]
         funcs = [self.day_boxoffice,self.day_boxoffice_pre,
                  self.sum_boxoffice,self.sum_boxoffice_pre,
-                 self.month_boxoffice,self.month_boxoffice_pre]
+                 self.month_boxoffice,self.month_boxoffice_pre,
+                 self.tw_boxoffice,self.us_boxoffice]
         
         """创建菜单栏"""
         filemenu = wx.Menu()
@@ -127,6 +139,12 @@ class MainWindow(wx.Frame):
             month = dlg.GetValue()
         dlg.Destroy()
         return month
+
+    def tw_boxoffice(self,evt):
+        self.tw_fig.weekend()
+
+    def us_boxoffice(self,evt):
+        self.us_fig.weekend()
     
     def OnExit(self,event):
         """退出函数"""
