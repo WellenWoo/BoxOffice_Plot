@@ -34,8 +34,10 @@
 2. 票房数据均采集自第三方网站，本程序不负责其真实性或精确性。
 
 ## Note 注意事项:
-需安装以下第三方库，本脚本才能正常运行：
+1.BoxOfficeGui.py需安装以下第三方库，本脚本才能正常运行：
 wx,tushare,matplotlib,pandas,numpy。
+
+2.BoxOffice_cli.py只需tushare,matplotlib,pandas,numpy即可运行。
 
 ## Feedback:
 有任何疑问或建议欢迎[反馈](https://github.com/WellenWoo/BoxOffice_Plot.git)。
