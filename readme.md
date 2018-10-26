@@ -43,7 +43,7 @@ wx,tushare,matplotlib,pandas,numpy。
 有任何疑问或建议欢迎[反馈](https://github.com/WellenWoo/BoxOffice_Plot.git)。
 
 ## Todo:
-1. 增加获取台北、北美地区近期票房数据的功能.
+1. 增加获取台北、北美地区历史票房数据的功能.
 
 
 
