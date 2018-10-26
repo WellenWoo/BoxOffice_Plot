@@ -45,7 +45,8 @@ class Main(object):
         self.fig.sum_boxoffice(title =u'本日影片累计票房',ylabel = u'累计票房\万元')
 
     def month_boxoffice(self,month):
-        self.fig_month.day_boxoffice(u'月份票房',u'票房\万元',month)       
+        title = u'{m}月份票房'.format(m = month)
+        self.fig_month.day_boxoffice(title,u'票房\万元',month)      
 
     def tw_boxoffice(self):
         self.tw_fig.weekend()
