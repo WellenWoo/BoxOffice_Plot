@@ -122,8 +122,8 @@ class MainWindow(wx.Frame):
 
     def month_boxoffice(self,evt):
         month = self.get_month()
-        title = u'{m}票房'.format(m = month)
-        self.fig_month.day_boxoffice(u'月份票房',u'票房\万元',month)
+        title = u'{m}月份票房'.format(m = month)
+        self.fig_month.day_boxoffice(title,u'票房\万元',month)
 
     def month_boxoffice_pre(self,evt):
         month = self.get_month()
