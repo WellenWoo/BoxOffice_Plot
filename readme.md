@@ -36,8 +36,11 @@
 ## Note 注意事项:
 1.BoxOfficeGui.py需安装以下第三方库，本脚本才能正常运行：
 wx,tushare,matplotlib,pandas,numpy。
+1.1.BoxOfficeGui.py需要wx2.8版本.
+1.2.BoxOfficeGui(wx4).py可以在wx4.0版本下运行.
 
 2.BoxOffice_cli.py只需tushare,matplotlib,pandas,numpy即可运行。
+
 
 ## Feedback:
 有任何疑问或建议欢迎[反馈](https://github.com/WellenWoo/BoxOffice_Plot.git)。
