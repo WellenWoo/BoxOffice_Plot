@@ -131,13 +131,16 @@ class MainWindow(wx.Frame):
         self.fig_month.day_boxoffice_pre(title,month)
         
     def get_month(self):
+        month = None
         dlg = wx.TextEntryDialog(
                 self, u'please input the month输入月份',
                 'month_boxoffice', 'oooo-oo')
-        dlg.SetValue("xxxx-xx")
+        dlg.SetValue("2018-11")
         if dlg.ShowModal() == wx.ID_OK:
             month = dlg.GetValue()
         dlg.Destroy()
+        if month is None:
+            month = "2018-11"
         return month
 
     def tw_boxoffice(self,evt):
