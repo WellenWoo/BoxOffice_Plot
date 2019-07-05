@@ -13,8 +13,8 @@ __author__ = 'WellenWoo'
 class plt_fig():
     def __init__(self):
         tt = time.gmtime()
-        self.today = str(tt[0]) + str(tt[1]) + str(tt[2])
-
+        self.today = str(tt.tm_year) + str(tt.tm_mon) + str(tt.tm_mday)
+        
     def cd_dir(self):
         path_now = os.getcwd()
         if path_now.endswith('data'):
