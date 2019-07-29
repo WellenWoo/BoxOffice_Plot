@@ -10,6 +10,8 @@ from utility_template import layout_template
 from tw_boxoffice import tw_fig
 from us_boxoffice import us_fig
 
+import wx.lib.agw.gradientbutton as gbtn
+
 __author__ = 'WellenWoo'
 __mail__ = 'wellenwoo@163.com'
 
@@ -84,7 +86,7 @@ class MainWindow(wx.Frame):
         self.sizer0 = wx.FlexGridSizer(rows=5, hgap=4, vgap=2)
         buttons = []
         for i,label in enumerate(b_labels):
-            b = wx.Button(self, id = i,label = label,size = (1.5*s.x,s.y))
+            b = gbtn.GradientButton(self, id = i,label = label,size = (1.5*s.x,s.y))
             buttons.append(b)
             self.sizer0.Add(b)      
 
